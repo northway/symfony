@@ -1,5 +1,7 @@
 *** OMSZ Symfony 1.4.20 ***
 
+=== Git ===
+
 Git submodule add:
 
 	$ git submodule add metadmin@skipper.met.hu:~/git/symfony.git lib/vendor/symfony
@@ -7,5 +9,24 @@ Git submodule add:
 Git submodule update:
 
 	$ git submodule update --remote
+
+=== Symfony ===
+
+Symfony start project (Propel):
+
+	$ php lib/vendor/symfony/data/bin/symfony generate:project NAME --orm=Propel
+
+Symfony app create (frontend/backend):
+
+	$ php symfony generate:app frontend
+
+Symfony folder permissions:
+
+	$ ./symfony project:permissions
+
+Symfony core symlinks:
+
+	$ ./symfony plugin:publish-assets
+	$ ln -s ../lib/vendor/symfony/data/web/sf/ web/
 
 *** END ***
