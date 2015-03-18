@@ -31,9 +31,13 @@ Symfony core symlinks:
 	$ ./symfony plugin:publish-assets
 	$ ln -s ../lib/vendor/symfony/data/web/sf/ web/
 
-PHP 5.5 error handle (frontend_dev):
+#### Optional
 
-  error_reporting: <?php echo ((E_ALL | E_STRICT) ^ E_DEPRECATED)."\n" ?>
+PHP 5.5 error handle (settings.yml):
+
+	dev:
+		.settings:
+			error_reporting: <?php echo ((E_ALL | E_STRICT) ^ E_DEPRECATED)."\n" ?>
 
 ## LICENSE
 
