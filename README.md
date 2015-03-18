@@ -6,7 +6,7 @@
 
 Git submodule add:
 
-	$ git submodule add git@github.com:northway/symfony.git lib/vendor/symfony
+	$ git submodule add https://github.com/northway/symfony.git lib/vendor/symfony
 
 Git submodule update:
 
