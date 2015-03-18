@@ -1,0 +1,8 @@
+config/databases.yml
+cache/*
+log/*
+!.gitignore
+lib/model/map/*
+lib/model/om/*
+# plugins/sfGuardPlugin/lib/model/map/*
+# plugins/sfGuardPlugin/lib/model/om/*
