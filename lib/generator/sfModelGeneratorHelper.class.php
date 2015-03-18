@@ -40,7 +40,7 @@ abstract class sfModelGeneratorHelper
       $link_config['class'] = $config['class'];
     }
 
-    return '<li class="sf_admin_action_delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, $config).'</li>';
+    return '<li class="sf_admin_action_delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, $link_config).'</li>';
   }
 
   public function linkToList($params, $config = null)
