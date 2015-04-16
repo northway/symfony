@@ -24,11 +24,11 @@ Symfony app create (frontend/backend):
 
 Symfony folder permissions:
 
-	$ ./symfony project:permissions
+	$ php symfony project:permissions
 
 Symfony core symlinks:
 
-	$ ./symfony plugin:publish-assets
+	$ php symfony plugin:publish-assets
 	$ ln -s ../lib/vendor/symfony/data/web/sf/ web/
 
 #### Optional
