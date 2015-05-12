@@ -29,7 +29,6 @@ Symfony folder permissions:
 Symfony core symlinks:
 
 	$ php symfony plugin:publish-assets
-	$ ln -s ../lib/vendor/symfony/data/web/sf/ web/
 
 #### Optional
 
