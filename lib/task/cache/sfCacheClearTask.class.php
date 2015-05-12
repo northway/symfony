@@ -125,8 +125,35 @@ EOF;
     // clear global cache
     if (null === $options['app'] && 'all' == $options['type'])
     {
-      $this->getFilesystem()->remove(sfFinder::type('file')->discard('.sf')->in(sfConfig::get('sf_cache_dir')));
+      
+      $allFiles = sfFinder::type('file')->discard('.sf')->in(sfConfig::get('sf_cache_dir'));
+      
+      $files = $this->excludeGitignore($allFiles);
+      
+      $this->getFilesystem()->remove($files);
     }
+  }
+  
+  /**
+   * Excludes the .gitignore from the $files arra
+   * 
+   * @param array $files
+   * @return array 
+   */
+  protected function excludeGitignore($files)
+  {
+    
+    $matches = array_filter($files, function ($haystack) {
+        return(strpos($haystack, '.gitignore'));
+      });
+      
+      if (!empty($matches))
+      {
+        $key = array_keys($matches);
+        unset($files[$key[0]]);
+      }
+    
+      return $files;
   }
 
   protected function getClearCacheMethod($type)
