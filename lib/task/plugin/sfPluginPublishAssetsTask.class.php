@@ -57,6 +57,8 @@ EOF;
    */
   protected function execute($arguments = array(), $options = array())
   {
+    $this->installSfWebAssets();
+    
     $enabledPlugins = $this->configuration->getPlugins();
 
     if ($diff = array_diff($arguments['plugins'], $enabledPlugins))
@@ -96,6 +98,22 @@ EOF;
     if (is_dir($webDir))
     {
       $this->getFilesystem()->relativeSymlink($webDir, sfConfig::get('sf_web_dir').DIRECTORY_SEPARATOR.$plugin, true);
+    }
+  }
+  
+  /**
+   * Installs symfony web assets. Sf Admin, Sf default and Sf debug files.
+   */
+  protected function installSfWebAssets() {
+    
+    $sfDir = $this->configuration->getSymfonyDataDir().DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'sf';
+    $webDir = sfConfig::get('sf_web_dir').DIRECTORY_SEPARATOR.'sf';
+    
+    $this->logSection('plugin', 'Configuring plugin - Symfony web assets');
+    
+    if (!is_dir($webDir))
+    {
+      $this->getFilesystem()->relativeSymlink($sfDir, $webDir, true);
     }
   }
 }

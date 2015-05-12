@@ -21,6 +21,7 @@ class sfProjectConfiguration
   protected
     $rootDir               = null,
     $symfonyLibDir         = null,
+    $symfonyDataDir        = null,
     $dispatcher            = null,
     $plugins               = array(),
     $pluginPaths           = array(),
@@ -46,11 +47,13 @@ class sfProjectConfiguration
 
     $this->rootDir = null === $rootDir ? self::guessRootDir() : realpath($rootDir);
     $this->symfonyLibDir = realpath(dirname(__FILE__).'/..');
+    $this->symfonyDataDir = realpath(dirname(__FILE__).'/../../data');
     $this->dispatcher = null === $dispatcher ? new sfEventDispatcher() : $dispatcher;
 
     ini_set('magic_quotes_runtime', 'off');
 
     sfConfig::set('sf_symfony_lib_dir', $this->symfonyLibDir);
+    sfConfig::set('sf_symfony_data_dir', $this->symfonyDataDir);
 
     $this->setRootDir($this->rootDir);
 
@@ -545,6 +548,16 @@ class sfProjectConfiguration
   public function getSymfonyLibDir()
   {
     return $this->symfonyLibDir;
+  }
+  
+  /**
+   * Returns the symfony data directory.
+   * 
+   * @return string The Symfony data directory
+   */
+  public function getSymfonyDataDir()
+  {
+    return $this->symfonyDataDir;
   }
 
   /**
