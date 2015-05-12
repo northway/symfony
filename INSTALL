@@ -4,7 +4,7 @@
 
 Git submodule add:
 
-	$ git submodule add metadmin@skipper.met.hu:~/git/symfony.git lib/vendor/symfony
+	$ git submodule add git@github.com:northway/symfony.git lib/vendor/symfony
 
 Git submodule update:
 
