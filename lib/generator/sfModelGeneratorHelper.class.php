@@ -26,6 +26,11 @@ abstract class sfModelGeneratorHelper
   {
     return '<li class="sf_admin_action_edit">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
   }
+  
+  public function linkToEditPicture($object, $params)
+  {
+    return '<li class="sf_admin_action_edit">'.link_to(__(image_tag('edit.png'), array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
+  }
 
   public function linkToDelete($object, $params, $config = null)
   {
@@ -41,6 +46,22 @@ abstract class sfModelGeneratorHelper
     }
 
     return '<li class="sf_admin_action_delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, $link_config).'</li>';
+  }
+  
+  public function linkToDeletePicture($object, $params, $config = null)
+  {
+    if ($object->isNew())
+    {
+      return '';
+    }
+
+    $link_config = array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm']);
+    
+    if(!empty($config)) {
+      $link_config['class'] = $config['class'];
+    }
+
+    return '<li class="sf_admin_action_delete">'.link_to(__(image_tag('delete.png'), array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, $link_config).'</li>';
   }
 
   public function linkToList($params, $config = null)
