@@ -279,7 +279,7 @@ class sfFileCache extends sfCache
     if (!is_dir(dirname($path)))
     {
       // create directory structure if needed
-      mkdir(dirname($path), 0777, true);
+      mkdir(dirname($path), 0775, true);
     }
 
     $tmpFile = tempnam(dirname($path), basename($path));
@@ -328,7 +328,7 @@ class sfFileCache extends sfCache
     if (!is_dir($cache_dir))
     {
       $current_umask = umask(0000);
-      @mkdir($cache_dir, 0777, true);
+      @mkdir($cache_dir, 0775, true);
       umask($current_umask);
     }
   }

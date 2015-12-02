@@ -33,7 +33,7 @@ class sfFileLogger extends sfLogger
    *                You can use any support php wrapper. To write logs to the Apache error log, use php://stderr
    * - format:      The log line format (default to %time% %type% [%priority%] %message%%EOL%)
    * - time_format: The log time strftime format (default to %b %d %H:%M:%S)
-   * - dir_mode:    The mode to use when creating a directory (default to 0777)
+   * - dir_mode:    The mode to use when creating a directory (default to 0775)
    * - file_mode:   The mode to use when creating a file (default to 0666)
    *
    * @param  sfEventDispatcher $dispatcher  A sfEventDispatcher instance
@@ -66,7 +66,7 @@ class sfFileLogger extends sfLogger
     $dir = dirname($options['file']);
     if (!is_dir($dir))
     {
-      mkdir($dir, isset($options['dir_mode']) ? $options['dir_mode'] : 0777, true);
+      mkdir($dir, isset($options['dir_mode']) ? $options['dir_mode'] : 0775, true);
     }
 
     $fileExists = file_exists($options['file']);

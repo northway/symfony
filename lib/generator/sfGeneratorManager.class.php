@@ -83,7 +83,7 @@ class sfGeneratorManager
     if (!is_dir(dirname($path)))
     {
       $current_umask = umask(0000);
-      if (false === @mkdir(dirname($path), 0777, true))
+      if (false === @mkdir(dirname($path), 0775, true))
       {
         throw new sfCacheException(sprintf('Failed to make cache directory "%s".', dirname($path)));
       }

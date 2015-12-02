@@ -19,8 +19,8 @@ $this->runTask('plugin:publish-assets');
 
 $this->logSection('install', 'fix sqlite database permissions');
 touch(sfConfig::get('sf_data_dir').'/sandbox.db');
-chmod(sfConfig::get('sf_data_dir'), 0777);
-chmod(sfConfig::get('sf_data_dir').'/sandbox.db', 0777);
+chmod(sfConfig::get('sf_data_dir'), 0775);
+chmod(sfConfig::get('sf_data_dir').'/sandbox.db', 0775);
 
 $this->logSection('install', 'add an empty file in empty directories');
 $seen = array();

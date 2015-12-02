@@ -413,7 +413,7 @@ class sfMessageSource_XLIFF extends sfMessageSource_File
     if (!is_dir($dir))
     {
       @mkdir($dir);
-      @chmod($dir, 0777);
+      @chmod($dir, 0775);
     }
 
     if (!is_dir($dir))
@@ -423,7 +423,7 @@ class sfMessageSource_XLIFF extends sfMessageSource_File
 
     $dom = $this->createDOMDocument($this->getTemplate($catalogue));
     file_put_contents($file, $dom->saveXML());
-    chmod($file, 0777);
+    chmod($file, 0775);
 
     return array($variant, $file);
   }

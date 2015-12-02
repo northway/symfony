@@ -69,7 +69,7 @@ class sfValidatedFile
    *
    * @throws Exception
    */
-  public function save($file = null, $fileMode = 0666, $create = true, $dirMode = 0777)
+  public function save($file = null, $fileMode = 0666, $create = true, $dirMode = 0775)
   {
     if (null === $file)
     {

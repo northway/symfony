@@ -268,7 +268,7 @@ EOF;
     $this->getFilesystem()->touch($this->getLockFile($app, $env));
 
     // change mode so the web user can remove it if we die
-    $this->getFilesystem()->chmod($this->getLockFile($app, $env), 0777);
+    $this->getFilesystem()->chmod($this->getLockFile($app, $env), 0775);
   }
 
   protected function unlock($app, $env)

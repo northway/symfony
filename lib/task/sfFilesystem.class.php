@@ -83,7 +83,7 @@ class sfFilesystem
    *
    * @return bool true if the directory has been created, false otherwise
    */
-  public function mkdirs($path, $mode = 0777)
+  public function mkdirs($path, $mode = 0775)
   {
     if (is_dir($path))
     {

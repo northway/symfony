@@ -81,7 +81,7 @@ class sfPearEnvironment
 
     if (!is_dir($options['cache_dir']))
     {
-      mkdir($options['cache_dir'], 0777, true);
+      mkdir($options['cache_dir'], 0775, true);
     }
 
     if (!isset($options['rest_base_class']))

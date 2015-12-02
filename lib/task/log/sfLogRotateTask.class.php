@@ -119,7 +119,7 @@ EOF;
       $this->getFilesystem()->touch($lockFile);
 
       // change mode so the web user can remove it if we die
-      $this->getFilesystem()->chmod($lockFile, 0777);
+      $this->getFilesystem()->chmod($lockFile, 0775);
 
       // if log file exists rotate it
       if (file_exists($srcLog))

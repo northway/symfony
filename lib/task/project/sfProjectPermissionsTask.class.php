@@ -45,12 +45,12 @@ EOF;
   {
     if (file_exists(sfConfig::get('sf_upload_dir')))
     {
-      $this->chmod(sfConfig::get('sf_upload_dir'), 0777);
+      $this->chmod(sfConfig::get('sf_upload_dir'), 0775);
     }
 
-    $this->chmod(sfConfig::get('sf_cache_dir'), 0777);
-    $this->chmod(sfConfig::get('sf_log_dir'), 0777);
-    $this->chmod(sfConfig::get('sf_root_dir').'/symfony', 0777);
+    $this->chmod(sfConfig::get('sf_cache_dir'), 0775);
+    $this->chmod(sfConfig::get('sf_log_dir'), 0775);
+    $this->chmod(sfConfig::get('sf_root_dir').'/symfony', 0775);
 
     $dirs = array(
       sfConfig::get('sf_cache_dir'),
@@ -63,8 +63,8 @@ EOF;
 
     foreach ($dirs as $dir)
     {
-      $this->chmod($dirFinder->in($dir), 0777);
-      $this->chmod($fileFinder->in($dir), 0666);
+      $this->chmod($dirFinder->in($dir), 0775);
+      $this->chmod($fileFinder->in($dir), 0775);
     }
 
     // note those files that failed
