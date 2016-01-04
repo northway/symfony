@@ -6,4 +6,4 @@ lib/model/map/*
 lib/model/om/*
 # plugins/sfGuardPlugin/lib/model/map/*
 # plugins/sfGuardPlugin/lib/model/om/*
-# app/frontend/config/app.yml
+# apps/frontend/config/app.yml
