@@ -51,4 +51,4 @@ It has been thoroughly tested in various real-world projects, and is actually in
 It is compatible with most of the available databases engines, including MySQL, PostgreSQL, Oracle, and Microsoft SQL Server.
 It runs on linux and Windows platforms.
 
-For more see LICENSE file
+For more see LICENSE information on https://symfony.com
